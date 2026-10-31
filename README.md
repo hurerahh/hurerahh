@@ -1,16 +1,43 @@
-## Hi there 👋
+# Hi, I'm Abu Hurerah 👋
 
-<!--
-**hurerahh/hurerahh** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### MERN Stack Developer | Karachi, Pakistan
 
-Here are some ideas to get you started:
+I build responsive, user-friendly web applications
+using modern web technologies.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I'm passionate about learning new technologies
+and creating scalable, high-performance applications.
+
+---
+
+## 🚀 About Me
+
+- 💻 MERN Stack Developer
+- 🌱 Learning full-stack development
+- 🎯 Interested in web development and AI
+- 📍 Based in Karachi, Pakistan
+
+## 🛠️ Tech Stack
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Node.js
+- Express.js
+- MongoDB
+- PHP
+- Laravel
+
+## 📂 Featured Projects
+
+| Project | Description |
+|---|---|
+| Task Tracker | Manage and organize daily tasks |
+| Weather App | View weather information |
+| E-commerce Store | Browse and manage products |
+
+## 📫 Connect With Me
+
+- GitHub: https://github.com/hurerahh
+- LinkedIn: YOUR_LINKEDIN_URL
