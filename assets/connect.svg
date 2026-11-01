@@ -126,13 +126,13 @@
       target="_blank"
       rel="noopener noreferrer"
       class="link"
-    
+    >
       <rect x="460" y="110" width="480" height="75" rx="14" class="card"/>
       <rect x="460" y="110" width="480" height="75" rx="14" class="neon-border"/>
       <text x="490" y="155" class="label">GitHub</text>
       <text x="880" y="155" class="arrow">→</text>
       <text x="490" y="175" class="small">github.com/hurerahh</text>
-      >
+      
     </a>
 
     <a
