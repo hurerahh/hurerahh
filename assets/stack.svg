@@ -1,0 +1,203 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b16"/>
+      <stop offset="100%" stop-color="#101a30"/>
+    </linearGradient>
+
+    <!-- Blue to red accent -->
+    <linearGradient id="accent">
+      <stop offset="0%" stop-color="#247bff"/>
+      <stop offset="100%" stop-color="#ff354f"/>
+    </linearGradient>
+
+    <!-- Center gradient -->
+    <radialGradient id="core">
+      <stop offset="0%" stop-color="#1d3d70"/>
+      <stop offset="100%" stop-color="#101a30"/>
+    </radialGradient>
+
+    <!-- Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .title {
+        font: 700 34px Arial, sans-serif;
+        fill: #f5f7ff;
+      }
+
+      .subtitle {
+        font: 14px Arial, sans-serif;
+        fill: #7f91b5;
+        letter-spacing: 2px;
+      }
+
+      .heading {
+        font: 700 16px Arial, sans-serif;
+        fill: #f5f7ff;
+      }
+
+      .text {
+        font: 14px Arial, sans-serif;
+        fill: #a8b3ca;
+      }
+
+      .orbit {
+        fill: none;
+        stroke: #247bff;
+        stroke-width: 1.5;
+        opacity: 0.45;
+      }
+
+      .orbit2 {
+        fill: none;
+        stroke: #ff354f;
+        stroke-width: 1.5;
+        opacity: 0.4;
+      }
+
+      .rotate1 {
+        transform-origin: 500px 235px;
+        animation: rotate 18s linear infinite;
+      }
+
+      .rotate2 {
+        transform-origin: 500px 235px;
+        animation: rotate 24s linear infinite reverse;
+      }
+
+      .rotate3 {
+        transform-origin: 500px 235px;
+        animation: rotate 30s linear infinite;
+      }
+
+      .card {
+        fill: #111d34;
+        stroke: #263956;
+        stroke-width: 1;
+      }
+
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .rotate1, .rotate2, .rotate3 {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="500" rx="24" fill="url(#bg)"/>
+
+  <!-- Border and accent -->
+  <rect x="1" y="1" width="998" height="498" rx="23"
+        fill="none" stroke="#263956"/>
+
+  <rect width="1000" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Header -->
+  <text x="50" y="55" class="title">My Tech Stack</text>
+  <text x="50" y="80" class="subtitle">
+    TECHNOLOGIES I WORK WITH
+  </text>
+
+  <circle cx="935" cy="45" r="5" fill="#36d399"/>
+  <text x="950" y="50" class="text">ONLINE</text>
+
+  <!-- Orbit glow -->
+  <circle cx="500" cy="235" r="125"
+          fill="#247bff" opacity="0.05"/>
+
+  <!-- Orbits -->
+  <ellipse cx="500" cy="235" rx="190" ry="65" class="orbit"/>
+  <ellipse cx="500" cy="235" rx="190" ry="65"
+           class="orbit2" transform="rotate(60 500 235)"/>
+  <ellipse cx="500" cy="235" rx="190" ry="65"
+           class="orbit" transform="rotate(120 500 235)"/>
+
+  <!-- Orbiting dots -->
+  <g class="rotate1" filter="url(#glow)">
+    <circle cx="690" cy="235" r="7" fill="#5ba0ff"/>
+  </g>
+
+  <g class="rotate2" filter="url(#glow)">
+    <circle cx="500" cy="170" r="7" fill="#ff354f"/>
+  </g>
+
+  <g class="rotate3" filter="url(#glow)">
+    <circle cx="500" cy="170" r="7" fill="#5ba0ff"/>
+  </g>
+
+  <!-- Center -->
+  <circle cx="500" cy="235" r="58"
+          fill="url(#core)"
+          stroke="#247bff"
+          stroke-width="2"/>
+
+  <circle cx="500" cy="235" r="48"
+          fill="none"
+          stroke="#ffffff"
+          stroke-opacity="0.08"/>
+
+  <text x="500" y="231"
+        text-anchor="middle"
+        font-family="Arial"
+        font-size="26"
+        font-weight="700"
+        fill="#ffffff">MERN</text>
+
+  <text x="500" y="255"
+        text-anchor="middle"
+        font-family="Arial"
+        font-size="13"
+        fill="#8ca9d8">Developer</text>
+
+  <!-- Technology cards -->
+  <rect x="40" y="320" width="440" height="135" rx="14" class="card"/>
+  <rect x="520" y="320" width="440" height="135" rx="14" class="card"/>
+
+  <!-- Frontend -->
+  <rect x="40" y="320" width="4" height="135" rx="2" fill="#247bff"/>
+
+  <text x="65" y="350" class="heading">01 / FRONTEND</text>
+  <text x="65" y="380" class="text">HTML · CSS · JavaScript</text>
+  <text x="65" y="405" class="text">React · Tailwind CSS</text>
+
+  <!-- Backend -->
+  <rect x="520" y="320" width="4" height="135" rx="2" fill="#ff354f"/>
+
+  <text x="545" y="350" class="heading">02 / BACKEND</text>
+  <text x="545" y="380" class="text">Node.js · Express.js</text>
+  <text x="545" y="405" class="text">REST APIs · Authentication</text>
+
+  <!-- Database -->
+  <text x="65" y="435" class="text">
+    DATABASE: MongoDB
+  </text>
+
+  <!-- Other technologies -->
+  <text x="545" y="435" class="text">
+    OTHER: PHP · Laravel · Git · GitHub
+  </text>
+
+  <!-- Footer -->
+  <text x="50" y="480" class="subtitle">
+    BUILDING MODERN WEB APPLICATIONS
+  </text>
+
+  <text x="950" y="480"
+        text-anchor="end"
+        class="text">FULL STACK DEVELOPMENT</text>
+</svg>
