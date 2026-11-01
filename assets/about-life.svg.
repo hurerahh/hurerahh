@@ -1,1 +1,101 @@
 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b16"/>
+      <stop offset="100%" stop-color="#101a30"/>
+    </linearGradient>
+
+    <linearGradient id="accent">
+      <stop offset="0%" stop-color="#247bff"/>
+      <stop offset="100%" stop-color="#ff354f"/>
+    </linearGradient>
+
+    <style>
+      .title {
+        font: 700 36px Arial, sans-serif;
+        fill: #f5f7ff;
+      }
+
+      .heading {
+        font: 600 22px Arial, sans-serif;
+        fill: #5ba0ff;
+      }
+
+      .text {
+        font: 17px Arial, sans-serif;
+        fill: #a8b3ca;
+      }
+
+      .slide {
+        opacity: 0;
+        animation: carousel 12s infinite;
+      }
+
+      .slide1 { animation-delay: 0s; }
+      .slide2 { animation-delay: 4s; }
+      .slide3 { animation-delay: 8s; }
+
+      @keyframes carousel {
+        0%, 28% { opacity: 1; }
+        33%, 100% { opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .slide {
+          animation: none;
+          opacity: 0;
+        }
+
+        .slide1 { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1000" height="400" rx="24" fill="url(#bg)"/>
+  <rect width="1000" height="5" fill="url(#accent)"/>
+
+  <text x="50" y="65" class="title">About Me</text>
+
+  <text x="50" y="115" class="heading">What I Do</text>
+
+  <text x="50" y="155" class="text">
+    I build modern, responsive web applications.
+  </text>
+
+  <text x="50" y="185" class="text">
+    My focus is on clean code and useful user experiences.
+  </text>
+
+  <text x="50" y="215" class="text">
+    I'm growing my skills across the MERN Stack.
+  </text>
+
+  <text x="50" y="275" class="heading">My Interests</text>
+
+  <g class="slide slide1">
+    <text x="50" y="315" class="text">💻 Coding and problem solving</text>
+    <text x="50" y="345" class="text">Building useful web applications</text>
+  </g>
+
+  <g class="slide slide2">
+    <text x="50" y="315" class="text">🚀 Learning new technologies</text>
+    <text x="50" y="345" class="text">Exploring modern web development</text>
+  </g>
+
+  <g class="slide slide3">
+    <text x="50" y="315" class="text">🤖 Exploring AI development</text>
+    <text x="50" y="345" class="text">Connecting AI with web applications</text>
+  </g>
+
+  <rect x="650" y="90" width="300" height="250" rx="18"
+        fill="#14213b" stroke="#247bff" stroke-width="1.5"/>
+
+  <text x="680" y="135" class="heading">My Capabilities</text>
+
+  <text x="680" y="180" class="text">Frontend Development</text>
+  <text x="680" y="220" class="text">Backend Development</text>
+  <text x="680" y="260" class="text">Database Management</text>
+  <text x="680" y="300" class="text">Responsive UI Design</text>
+</svg>
+
