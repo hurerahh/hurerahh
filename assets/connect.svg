@@ -20,14 +20,19 @@
     </linearGradient>
 
     <radialGradient id="orb1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 220) rotate(90) scale(200 200)">
-      <stop stop-color="#34D399" stop-opacity="0.4"/>
+      <stop stop-color="#34D399" stop-opacity="0.42"/>
       <stop offset="1" stop-color="#34D399" stop-opacity="0"/>
     </radialGradient>
 
     <radialGradient id="orb2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1000 480) rotate(90) scale(220 220)">
-      <stop stop-color="#60A5FA" stop-opacity="0.36"/>
+      <stop stop-color="#60A5FA" stop-opacity="0.38"/>
       <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
     </radialGradient>
+
+    <linearGradient id="tagFill" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
 
     <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="8" result="blur"/>
@@ -38,12 +43,16 @@
     </filter>
 
     <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="10" result="blur1"/>
+      <feGaussianBlur stdDeviation="12" result="blur1"/>
       <feColorMatrix in="blur1" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1.8 0" result="glow"/>
       <feMerge>
         <feMergeNode in="glow"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
+    </filter>
+
+    <filter id="avatarShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#67E8F9" flood-opacity="0.35"/>
     </filter>
 
     <style>
@@ -65,41 +74,23 @@
 
       .card-outline-outer {
         fill: none;
-        stroke: rgba(148, 163, 184, 0.25);
+        stroke: rgba(148, 163, 184, 0.28);
         stroke-width: 1.2;
       }
 
-      .social-pill {
-        cursor: pointer;
-        transition: transform 0.25s ease, filter 0.25s ease, stroke 0.25s ease;
-      }
-
-      .social-pill:hover {
-        transform: translateY(-2px);
-        filter: url(#strongGlow);
-      }
-
-      .social-pill .badge-fill {
-        fill: rgba(15, 23, 42, 0.7);
-        stroke: rgba(148, 163, 184, 0.2);
+      .tag {
+        fill: url(#tagFill);
+        stroke: rgba(148, 163, 184, 0.22);
         stroke-width: 1.5;
+        filter: url(#softGlow);
       }
 
-      .social-pill:hover .badge-fill {
-        stroke: rgba(110, 231, 255, 0.9);
-        fill: rgba(15, 23, 42, 0.92);
-      }
-
-      .social-pill .badge-text {
-        fill: #E5EEF9;
+      .tag-text {
+        fill: #E2E8F0;
         font-family: 'Segoe UI', Arial, sans-serif;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
-        letter-spacing: 0.18em;
-      }
-
-      .social-pill:hover .badge-text {
-        fill: #B6F5FF;
+        letter-spacing: 0.12em;
       }
 
       .link-line {
@@ -114,19 +105,10 @@
       }
 
       @keyframes borderFlow {
-        from {
-          stroke-dashoffset: 0;
-        }
-        to {
-          stroke-dashoffset: -340;
-        }
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: -340; }
       }
     </style>
-
-    <g id="socialBadge" class="social-pill">
-      <rect class="badge-fill" x="0" y="0" width="170" height="66" rx="16"/>
-      <text class="badge-text" x="85" y="42" text-anchor="middle">GITHUB</text>
-    </g>
   </defs>
 
   <rect width="1280" height="720" fill="url(#bg)"/>
@@ -145,7 +127,7 @@
     <rect class="card-outline" x="145" y="115" width="990" height="490" rx="28"/>
   </g>
 
-  <g opacity="0.9">
+  <g opacity="0.95">
     <path class="link-line" d="M310 330C420 260 520 250 610 320C710 395 830 390 930 290"/>
     <path class="link-line" d="M970 350C850 430 740 450 640 400C550 355 470 360 390 430"/>
     <circle class="dot" cx="310" cy="330" r="6"/>
@@ -157,20 +139,33 @@
   </g>
 
   <g>
-    <text x="640" y="240" fill="#F8FAFC" font-size="46" font-weight="700" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" letter-spacing="10">CONNECT</text>
-    <text x="640" y="286" fill="#94A3B8" font-size="20" font-weight="500" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" letter-spacing="4">BUILD • SHARE • GROW</text>
+    <text x="640" y="235" fill="#F8FAFC" font-size="46" font-weight="700" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" letter-spacing="10">CONNECT</text>
+    <text x="640" y="280" fill="#94A3B8" font-size="20" font-weight="500" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" letter-spacing="4">BUILD • SHARE • GROW</text>
   </g>
+
+  <g filter="url(#avatarShadow)">
+    <circle cx="640" cy="370" r="110" fill="rgba(15,23,42,0.8)" stroke="rgba(110,231,255,0.85)" stroke-width="3"/>
+    <circle cx="640" cy="370" r="92" fill="none" stroke="rgba(167,139,250,0.7)" stroke-width="1.5" stroke-dasharray="8 10"/>
+    <image href="https://raw.githubusercontent.com/hurerahh/hurerahh/main/assets/id.png" x="548" y="278" width="184" height="184" preserveAspectRatio="xMidYMid slice" clip-path="url(#clipPortrait)"/>
+  </g>
+
+  <defs>
+    <clipPath id="clipPortrait">
+      <circle cx="640" cy="370" r="92"/>
+    </clipPath>
+  </defs>
 
   <g>
-    <use href="#socialBadge" x="230" y="360"/>
-    <use href="#socialBadge" x="930" y="215"/>
-    <use href="#socialBadge" x="900" y="455"/>
-    <use href="#socialBadge" x="240" y="445"/>
-  </g>
+    <rect class="tag" x="212" y="360" width="160" height="54" rx="16"/>
+    <text class="tag-text" x="292" y="396" text-anchor="middle">GITHUB</text>
 
-  <g opacity="0.95" filter="url(#softGlow)">
-    <circle cx="640" cy="360" r="74" fill="rgba(21, 35, 52, 0.75)" stroke="rgba(110, 231, 255, 0.8)" stroke-width="2"/>
-    <circle cx="640" cy="360" r="54" fill="none" stroke="rgba(167, 139, 250, 0.7)" stroke-width="1.5" stroke-dasharray="9 10"/>
-    <path d="M640 308V412M588 360H692M610 330L670 390M670 330L610 390" stroke="#E2E8F0" stroke-width="7" stroke-linecap="round"/>
+    <rect class="tag" x="908" y="220" width="168" height="54" rx="16"/>
+    <text class="tag-text" x="992" y="256" text-anchor="middle">LINKEDIN</text>
+
+    <rect class="tag" x="900" y="468" width="150" height="54" rx="16"/>
+    <text class="tag-text" x="975" y="504" text-anchor="middle">INSTAGRAM</text>
+
+    <rect class="tag" x="220" y="470" width="150" height="54" rx="16"/>
+    <text class="tag-text" x="295" y="506" text-anchor="middle">PORTFOLIO</text>
   </g>
 </svg>
