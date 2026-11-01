@@ -1,0 +1,84 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b16"/>
+      <stop offset="100%" stop-color="#101a30"/>
+    </linearGradient>
+
+    <linearGradient id="accent">
+      <stop offset="0%" stop-color="#247bff"/>
+      <stop offset="100%" stop-color="#ff354f"/>
+    </linearGradient>
+
+    <style>
+      .heading {
+        font: 700 54px Arial, sans-serif;
+        fill: #f5f7ff;
+      }
+
+      .small {
+        font: 18px Arial, sans-serif;
+        fill: #a8b3ca;
+      }
+
+      .role {
+        font: 600 25px Arial, sans-serif;
+        fill: #5ba0ff;
+        opacity: 0;
+        animation: show 12s infinite;
+      }
+
+      .role1 { animation-delay: 0s; }
+      .role2 { animation-delay: 3s; }
+      .role3 { animation-delay: 6s; }
+      .role4 { animation-delay: 9s; }
+
+      @keyframes show {
+        0%, 22% { opacity: 1; }
+        25%, 100% { opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .role {
+          animation: none;
+          opacity: 0;
+        }
+
+        .role1 { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1000" height="420" rx="24" fill="url(#background)"/>
+  <rect width="1000" height="5" fill="url(#accent)"/>
+
+  <text x="55" y="75" class="small">HELLO, WORLD! I'M</text>
+
+  <text x="55" y="150" class="heading">Abu Hurerah</text>
+
+  <rect x="55" y="180" width="430" height="2" fill="#247bff"/>
+
+  <text x="55" y="230" class="role role1">MERN Stack Developer</text>
+  <text x="55" y="230" class="role role2">Frontend Developer</text>
+  <text x="55" y="230" class="role role3">Full-Stack Developer</text>
+  <text x="55" y="230" class="role role4">JavaScript Developer</text>
+
+  <text x="55" y="285" class="small">
+    Building modern, user-friendly web applications.
+  </text>
+
+  <text x="55" y="330" class="small">
+    Karachi, Pakistan
+  </text>
+
+  <text x="55" y="365" class="small">
+    React · Node.js · Express · MongoDB
+  </text>
+
+  <rect x="690" y="40" width="270" height="340" rx="24"
+        fill="#14213b" stroke="#247bff" stroke-width="2"/>
+
+  <text x="825" y="210" text-anchor="middle"
+        class="small">Portrait coming soon</text>
+</svg>
