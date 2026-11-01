@@ -79,6 +79,12 @@
   <rect x="690" y="40" width="270" height="340" rx="24"
         fill="#14213b" stroke="#247bff" stroke-width="2"/>
 
-  <text x="825" y="210" text-anchor="middle"
-        class="small">Portrait coming soon</text>
+  <image
+  href="./id.png"
+  x="690"
+  y="40"
+  width="270"
+  height="340"
+  preserveAspectRatio="xMidYMid slice"
+/>
 </svg>
