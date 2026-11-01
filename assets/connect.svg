@@ -33,6 +33,24 @@
         stroke-width: 1.5;
       }
 
+      .link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link .card {
+  transition: transform 0.25s ease, filter 0.25s ease, stroke 0.25s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.link:hover .card,
+.link:focus-visible .card {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 0 8px #2196f3);
+  stroke: #64b5f6;
+}
+
       .arrow {
         fill: #5ba0ff;
         animation: nudge 1.5s ease-in-out infinite;
@@ -72,10 +90,17 @@
 
   <!-- Social cards -->
   <g>
-    <rect x="460" y="110" width="480" height="75" rx="14" class="card"/>
-    <text x="490" y="155" class="label">GitHub</text>
-    <text x="880" y="155" class="arrow">→</text>
-    <text x="490" y="175" class="small">github.com/hurerahh</text>
+    <a
+  href="https://github.com/hurerahh"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="link"
+>
+  <rect x="460" y="110" width="480" height="75" rx="14" class="card"/>
+  <text x="490" y="155" class="label">GitHub</text>
+  <text x="880" y="155" class="arrow">→</text>
+  <text x="490" y="175" class="small">github.com/hurerahh</text>
+</a>
 
     <rect x="460" y="205" width="480" height="75" rx="14" class="card"/>
     <text x="490" y="250" class="label">LinkedIn</text>
